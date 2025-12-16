@@ -93,7 +93,7 @@ const PageLoader = ({ onAnimationComplete }) => {
           animate="animate"
           exit="exit"
         >
-          TED
+          TEDx
         </motion.div>
       </motion.div>
 
@@ -112,7 +112,7 @@ const PageLoader = ({ onAnimationComplete }) => {
           animate="animate"
           exit="exit"
         >
-          xUniversityOfBarishal
+          University of Barishal
         </motion.div>
       </motion.div>
     </motion.div>

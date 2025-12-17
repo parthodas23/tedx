@@ -6,13 +6,12 @@ import useLenis from "./hooks/useLenis";
 import PageLoader from "./components/PageLoader";
 import About from "./components/About";
 import Speakers from "./components/Speakers";
-import ThemeSection from "./components/ThemeSection";
-import Agenda from "./components/Agenda";
-import Sponsors from "./components/Sponsors";
+
 import Venue from "./components/Venue";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
-
+import Organizers from "./components/Organizers";
+import FAQ from "./components/FAQ";
 // 1. Import your new Background component
 import PremiumBackground from "./components/PremiumBackground";
 
@@ -27,7 +26,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); 
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -50,16 +49,17 @@ function App() {
       {animationComplete && (
         <>
           {/* 2. Place it here: It will render behind all other components */}
-          <PremiumBackground /> 
+          <PremiumBackground />
 
-          <main className="relative z-10"> 
+          <main className="relative z-10">
             <Hero />
             <About />
-            <ThemeSection />
+
             <Speakers />
-            <Agenda />
-            <Sponsors />
             <Venue />
+            <Organizers />
+            <FAQ />
+
             <Footer />
           </main>
         </>

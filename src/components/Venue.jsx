@@ -3,22 +3,25 @@ import { motion } from "framer-motion";
 import { FiMapPin, FiNavigation, FiClock } from "react-icons/fi";
 
 const Venue = () => {
-  const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.472851493282!2d90.34759607593638!3d22.636166530669282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37553763878b307f%3A0xc47671761e3d6448!2sUniversity%20of%20Barishal!5e0!3m2!1sen!2sbd!4v1715800000000!5m2!1sen!2sbd";
+  const mapSrc =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.472851493282!2d90.34759607593638!3d22.636166530669282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37553763878b307f%3A0xc47671761e3d6448!2sUniversity%20of%20Barishal!5e0!3m2!1sen!2sbd!4v1715800000000!5m2!1sen!2sbd";
 
   return (
-    <section id="venue" className="py-24 bg-transparent text-white px-6 overflow-hidden">
+    <section
+      id="venue"
+      className="py-24 bg-transparent text-white px-6 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto">
-        
         {/* Section Header */}
         <div className="mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             className="text-red-600 font-bold tracking-[0.3em] uppercase text-sm mb-4"
           >
             Location
           </motion.h2>
-          <motion.h3 
+          <motion.h3
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
@@ -29,9 +32,8 @@ const Venue = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
           {/* Left Side: Information Card */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -44,10 +46,13 @@ const Venue = () => {
                 <div>
                   <div className="flex items-center space-x-3 mb-4">
                     <FiMapPin className="text-red-600 text-2xl" />
-                    <span className="text-zinc-400 font-bold uppercase tracking-widest text-xs">Address</span>
+                    <span className="text-zinc-400 font-bold uppercase tracking-widest text-xs">
+                      Address
+                    </span>
                   </div>
                   <h4 className="text-2xl font-bold leading-tight">
-                    Main Auditorium,<br />
+                    Main Auditorium,
+                    <br />
                     University of Barishal
                   </h4>
                   <p className="text-zinc-500 mt-2">
@@ -59,21 +64,25 @@ const Venue = () => {
                   <div>
                     <div className="flex items-center space-x-2 mb-2">
                       <FiClock className="text-red-600" />
-                      <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">Time</span>
+                      <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">
+                        Time
+                      </span>
                     </div>
                     <p className="text-sm font-semibold">09:00 AM - 05:00 PM</p>
                   </div>
                   <div>
                     <div className="flex items-center space-x-2 mb-2">
                       <FiNavigation className="text-red-600" />
-                      <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">Capacity</span>
+                      <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">
+                        Capacity
+                      </span>
                     </div>
                     <p className="text-sm font-semibold">500+ Attendees</p>
                   </div>
                 </div>
 
                 <motion.a
-                  href="https://maps.app.goo.gl/YourActualLink" 
+                  href="https://maps.app.goo.gl/YourActualLink"
                   target="_blank"
                   rel="noreferrer"
                   whileHover={{ scale: 1.02 }}
@@ -87,7 +96,7 @@ const Venue = () => {
           </motion.div>
 
           {/* Right Side: The Interactive Map Container */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
@@ -97,7 +106,7 @@ const Venue = () => {
             <iframe
               title="Venue Map"
               src={mapSrc}
-              // EXPLANATION: 
+              // EXPLANATION:
               // 1. Full color by default on mobile.
               // 2. md:grayscale md:invert etc. makes it dark only on Desktop.
               // 3. group-hover:grayscale-0 etc. restores color on hover.

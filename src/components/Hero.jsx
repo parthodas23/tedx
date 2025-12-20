@@ -5,7 +5,7 @@ import { FiCalendar, FiMapPin, FiTag } from "react-icons/fi";
 
 import Navbar from "./Navbar";
 import CountdownTimer from "./CountdownTimer";
-import BACKGROUND_IMAGE_PATH from "../assets/12.png";
+import BACKGROUND_IMAGE_PATH from "../assets/Logo.png";
 
 const EVENT_DATE = "2026-01-15T10:00:00";
 
@@ -56,7 +56,7 @@ const Hero = () => {
           style={{
             backgroundImage: `url(${BACKGROUND_IMAGE_PATH})`,
             backgroundSize: "cover",
-            backgroundPosition: "center bottom",
+            backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
         ></div>

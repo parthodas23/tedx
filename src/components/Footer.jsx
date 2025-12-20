@@ -61,7 +61,7 @@ const Footer = () => {
               Navigation
             </h4>
             <ul className="space-y-4 text-gray-400">
-              {["Home", "About", "Speakers", "Sponsors", "FAQ"].map((link) => (
+              {["About", "Speakers", "Organizers", "Venue"].map((link) => (
                 <li key={link}>
                   <a
                     href={`#${link.toLowerCase()}`}

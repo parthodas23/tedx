@@ -4,7 +4,7 @@ import { FiMapPin, FiNavigation, FiClock } from "react-icons/fi";
 
 const Venue = () => {
   const mapSrc =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.472851493282!2d90.34759607593638!3d22.636166530669282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37553763878b307f%3A0xc47671761e3d6448!2sUniversity%20of%20Barishal!5e0!3m2!1sen!2sbd!4v1715800000000!5m2!1sen!2sbd";
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.9733675645784!2d90.36741357356163!3d22.692035328585543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755340ca6d6f76b%3A0xa36769e968c82144!2sBarishal%20Shilpakala%20Academy!5e0!3m2!1sen!2sbd!4v1766888013242!5m2!1sen!2sbd";
 
   return (
     <section

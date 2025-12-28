@@ -75,7 +75,7 @@ const Navbar = () => {
           >
             <span className="text-red-600 font-extrabold mr-0.5">TED</span>
             <span className="text-white">x</span>
-            UniversityOfBarishal
+            UniversityofBarishal
           </motion.a>
         </div>
 

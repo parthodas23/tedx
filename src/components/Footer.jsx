@@ -12,6 +12,20 @@ const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const socialLinks = [
+    {
+      Icon: FaFacebookF,
+      href: "https://www.facebook.com/share/1bfEeAZ7ZT/",
+    },
+    {
+      Icon: FaInstagram,
+      href: "https://www.instagram.com/tedxuniversityofbarishal?igsh=MTJiejQ0d3VnaTlkcA==",
+    },
+    {
+      Icon: FaLinkedinIn,
+      href: "https://www.linkedin.com/company/tedx-university-of-barishal",
+    },
+  ];
 
   return (
     <footer className="relative bg-transparent text-white pt-20 pb-10 px-6 overflow-hidden">
@@ -40,18 +54,18 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex space-x-4">
-              {[FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube].map(
-                (Icon, idx) => (
-                  <motion.a
-                    key={idx}
-                    href="#"
-                    whileHover={{ y: -5, backgroundColor: "#eb0028" }}
-                    className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-800 bg-zinc-900/50 transition-colors"
-                  >
-                    <Icon className="text-sm" />
-                  </motion.a>
-                )
-              )}
+              {socialLinks.map(({ Icon, href }, idx) => (
+                <motion.a
+                  key={idx}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -5, backgroundColor: "#eb0028" }}
+                  className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-800 bg-zinc-900/50 transition-colors"
+                >
+                  <Icon className="text-sm" />
+                </motion.a>
+              ))}
             </div>
           </div>
 
@@ -80,13 +94,13 @@ const Footer = () => {
               Venue
             </h4>
             <p className="text-gray-400 leading-relaxed">
-              Main Auditorium,
+              Barishal Shilpakala Academy
               <br />
-              University of Barishal
-              <br />
-              Barishal-8200, Bangladesh
+              Band Rd, Barishal
             </p>
-            <p className="mt-4 text-red-600 font-bold">tedx@bu.ac.bd</p>
+            <p className="mt-4 text-red-600 font-bold">
+              tedxbuofficial@gmail.com
+            </p>
           </div>
         </div>
 

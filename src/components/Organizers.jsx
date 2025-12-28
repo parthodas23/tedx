@@ -3,6 +3,26 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectCoverflow } from "swiper/modules";
 
+import abedurImg from "../assets/organizer/Abedur Rahman Sayem.jpeg";
+import abidaImg from "../assets/organizer/ABIDA ISLAM AHONA.jpg";
+import akhiImg from "../assets/organizer/Akhi Halder.jpg";
+import ayshaImg from "../assets/organizer/aysha siddika papry.jpeg";
+import eftyImg from "../assets/organizer/Efty al maruf.jpeg";
+import fahimaImg from "../assets/organizer/Fahima.jpg";
+import jannatulImg from "../assets/organizer/jannatul ferdous.jpg";
+import junaedImg from "../assets/organizer/Juned Al Sajid.jpeg";
+import sojibImg from "../assets/organizer/Mahmudul Hasan Sojib.jpeg";
+import mojoyImg from "../assets/organizer/monjoy kumar adhikari.jpg";
+import moriomImg from "../assets/organizer/Moriom Sabia.jpeg";
+import nayemImg from "../assets/organizer/nayem khalifa.jpeg";
+import oishiImg from "../assets/organizer/oishi dey.jpeg";
+import safayetImg from "../assets/organizer/Shafayet Ullah.jpg";
+import siamImg from "../assets/organizer/Siamul Islam.jpeg";
+import tanjilaImg from "../assets/organizer/TANJILA ISLAM.jpg";
+import tanvirImg from "../assets/organizer/Tanvir Mahtab.jpg";
+import taslimImg from "../assets/organizer/taslim ahmed nadim.jpeg";
+import hafsaImg from "../assets/organizer/umme hafsa.jpeg";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,38 +31,78 @@ import "swiper/css/effect-coverflow";
 const organizers = [
   {
     id: 1,
-    name: "Arif Rahman",
-    role: "Lead Organizer",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400",
+    name: "Safayet Ullah",
+    role: "Lead Organizer And Licensee",
+    image: safayetImg,
+  },
+  { id: 2, name: "Umme Hafsa", role: "Curator", image: hafsaImg },
+  { id: 3, name: "Mahmudul Hasan Sojib", role: "Curator", image: sojibImg },
+  { id: 4, name: "Nayem Khalifa", role: "Curator", image: nayemImg },
+  // Sahedur is excluded because sahedurImg is not imported/defined
+  { id: 6, name: "Oishi Dey", role: "Sponsor Officer", image: oishiImg },
+  { id: 7, name: "Efty Al Maruf", role: "Head Of Marketing", image: eftyImg },
+  {
+    id: 8,
+    name: "Md. Siamul Islam",
+    role: "Head Of Operations",
+    image: siamImg,
   },
   {
-    id: 2,
-    name: "Tahmina Akter",
-    role: "Co-Organizer",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400",
+    id: 9,
+    name: "Jannatul Ferdous",
+    role: "Head Of Hospitality",
+    image: jannatulImg,
   },
   {
-    id: 3,
-    name: "Sajid Hasan",
-    role: "Curation Head",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400",
+    id: 10,
+    name: "Moriom Sabia",
+    role: "Head Of Partnership",
+    image: moriomImg,
+  },
+  { id: 11, name: "Akhi Halder", role: "Partnership Officer", image: akhiImg },
+  {
+    id: 12,
+    name: "Abedur Rahman Sayem",
+    role: "Head Of Event Management",
+    image: abedurImg,
   },
   {
-    id: 4,
-    name: "Nusrat Jahan",
-    role: "Communications",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400",
+    id: 13,
+    name: "Md. Junaed Al Sajid",
+    role: "Event Management Officer",
+    image: junaedImg,
   },
   {
-    id: 5,
-    name: "Fahim Ahmed",
-    role: "Technical Lead",
-    image:
-      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=400",
+    id: 14,
+    name: "Mojoy Kumar Adhikary",
+    role: "Event Management Officer",
+    image: mojoyImg,
+  },
+  {
+    id: 15,
+    name: "Taslim Ahmed Nadim",
+    role: "Event Management Executive",
+    image: taslimImg,
+  },
+  { id: 16, name: "Tanvir Mahtab", role: "Head Of IT", image: tanvirImg },
+  { id: 17, name: "Aysha Siddika Papry", role: "IT Officer", image: ayshaImg },
+  {
+    id: 18,
+    name: "Abida Islam Ahona",
+    role: "Head Of Communication",
+    image: abidaImg,
+  },
+  {
+    id: 19,
+    name: "Tanjila Islam",
+    role: "Communication Officer",
+    image: tanjilaImg,
+  },
+  {
+    id: 20,
+    name: "Fahima Kabir",
+    role: "Documentation Officer",
+    image: fahimaImg,
   },
 ];
 

@@ -1,143 +1,172 @@
-import React from "react";
-import { motion } from "framer-motion";
-// Added FiTicket for the button icon
-import { FiCalendar, FiMapPin, FiTag } from "react-icons/fi";
+import React, { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  useMotionValue,
+} from "framer-motion";
+import { FiCalendar, FiMapPin, FiArrowRight } from "react-icons/fi";
 
 import Navbar from "./Navbar";
 import CountdownTimer from "./CountdownTimer";
 import BACKGROUND_IMAGE_PATH from "../assets/Logo.png";
-
 const EVENT_DATE = "2026-01-15T10:00:00";
-
 const Hero = () => {
-  const headlineVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { type: "spring", stiffness: 100, damping: 10, delay: 0.5 },
-    },
-  };
+  // --- MAGNETIC BUTTON LOGIC ---
+  const buttonRef = useRef(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
 
-  const lineVariants = {
-    hidden: { width: 0 },
-    visible: {
-      width: "50px",
-      transition: { duration: 0.8, delay: 0.9 },
-    },
-  };
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
 
-  const infoVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { type: "spring", stiffness: 100, damping: 15, delay: 1.2 },
-    },
-  };
+  const handleMouseMove = (e) => {
+    const rect = buttonRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const distanceX = e.clientX - centerX;
+    const distanceY = e.clientY - centerY;
 
-  // Animation for the new Ticket Button
-  const buttonVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: { delay: 1.5, duration: 0.5 },
-    },
+    // Only move if mouse is within 100px of the button
+    if (Math.abs(distanceX) < 150 && Math.abs(distanceY) < 150) {
+      x.set(distanceX * 0.4);
+      y.set(distanceY * 0.4);
+    } else {
+      x.set(0);
+      y.set(0);
+    }
   };
 
   return (
-    <section className="relative h-screen min-h-[700px] bg-black overflow-hidden">
+    <section
+      onMouseMove={handleMouseMove}
+      className="relative h-screen min-h-[800px] bg-[#0A0A0A] overflow-hidden flex flex-col font-sans"
+    >
       <Navbar />
 
-      <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-no-repeat opacity-40"
-          style={{
-            backgroundImage: `url(${BACKGROUND_IMAGE_PATH})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
+      {/* --- CINEMATIC BACKGROUND --- */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Film Grain Overlay */}
+        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+
+        {/* The Logo with a 'Soft Focus' Zoom */}
+        <motion.div
+          initial={{ scale: 1.2, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.25 }}
+          transition={{ duration: 3, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-0 bg-no-repeat bg-center bg-contain"
+          style={{ backgroundImage: `url(${BACKGROUND_IMAGE_PATH})` }}
+        />
+
+        {/* Deep Vignette */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_90%)]" />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <motion.h1
-          className="text-white text-xl sm:text-2xl md:text-3xl font-medium tracking-widest uppercase mb-12 max-w-4xl"
-          variants={headlineVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          An Independently Organized{" "}
-          <span className="text-red-600 font-extrabold">TEDx</span> Event
-        </motion.h1>
-
-        <div className="flex flex-col items-center mb-10">
-          <motion.div
-            className="h-0.5 bg-red-600 mb-6"
-            variants={lineVariants}
-            initial="hidden"
-            animate="visible"
-          ></motion.div>
-
+      <div className="relative z-10 flex flex-col items-center justify-center flex-grow text-center px-4">
+        {/* --- REVEAL ANIMATION TITLE --- */}
+        <div className="overflow-hidden mb-2">
           <motion.p
-            className="text-sm uppercase tracking-[0.3em] text-gray-400"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { delay: 1 } }}
+            initial={{ y: 50 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="text-red-600 font-bold tracking-[0.6em] text-xs uppercase"
           >
-            Event Starts In
+            Ideas Worth Spreading
           </motion.p>
         </div>
 
-        <CountdownTimer eventDate={EVENT_DATE} />
+        <div className="overflow-hidden">
+          <motion.h1
+            initial={{ y: 150 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+            className="text-white text-4xl md:text-7xl font-extrabold tracking-tighter mb-8 italic"
+          >
+            TEDx{" "}
+            <span className="not-italic text-red-600 underline decoration-1 underline-offset-8">
+              2026
+            </span>
+          </motion.h1>
+        </div>
 
-        {/* Event Details */}
+        {/* --- COUNTDOWN WITH GLASSMORPHISM --- */}
         <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-16 mt-16"
-          variants={infoVariants}
-          initial="hidden"
-          animate="visible"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5, delay: 0.8 }}
+          className="min-w-sm bg-white/5 border border-white/10 p-8 rounded-2xl shadow-2xl"
         >
-          <div className="flex items-center space-x-3">
-            <FiCalendar className="text-red-600 text-3xl" />
-            <div className="text-left">
-              <p className="text-sm uppercase tracking-wider text-gray-400">
-                DATE
-              </p>
-              <p className="text-2xl font-bold text-white">
-                15<sup className="text-lg">th</sup> January 2026
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center space-x-3">
-            <FiMapPin className="text-red-600 text-3xl" />
-            <div className="text-left">
-              <p className="text-sm uppercase tracking-wider text-gray-400">
-                LOCATION
-              </p>
-              <p className="text-2xl font-bold text-white">Main Auditorium</p>
-            </div>
-          </div>
+          <CountdownTimer eventDate={EVENT_DATE} />
         </motion.div>
 
-        {/* --- NEW BOOK TICKET BUTTON --- */}
+        {/* --- INFO CARDS WITH BORDER ANIMATION --- */}
+        <div className="flex flex-col md:flex-row gap-8 mt-16">
+          {[
+            { icon: <FiCalendar />, label: "SAVE THE DATE", val: "JANUARY 31" },
+            { icon: <FiMapPin />, label: "VENUE", val: "Barishal Shilpakala Academy"}
+          ].map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, x: idx === 0 ? -20 : 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.2 + idx * 0.2 }}
+              className="group flex items-center gap-6 px-8 py-4 border-l border-red-600/30 hover:border-red-600 transition-all duration-500"
+            >
+              <span className="text-red-600 text-2xl group-hover:scale-125 transition-transform duration-500">
+                {item.icon}
+              </span>
+              <div className="text-left">
+                <p className="text-[10px] text-gray-500 tracking-[0.3em] font-bold">
+                  {item.label}
+                </p>
+                <p className="text-xl text-white font-light tracking-widest">
+                  {item.val}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* --- THE MAGNETIC MAGNETIC BUTTON --- */}
         <motion.div
-          className="mt-12 sm:mt-16"
-          variants={buttonVariants}
-          initial="hidden"
-          animate="visible"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          ref={buttonRef}
+          style={{ x: mouseXSpring, y: mouseYSpring }}
+          className="mt-20"
         >
-          <button className="flex items-center space-x-3 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest transition-colors duration-300 shadow-lg shadow-red-600/20">
-            <FiTag className="text-xl" />
-            <span>Book Ticket</span>
-          </button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group relative bg-white text-black px-12 py-5 rounded-full font-bold flex items-center gap-4 transition-colors hover:bg-red-600 hover:text-white"
+          >
+            <span className="tracking-[0.2em] uppercase text-sm">
+              Reserve your seat
+            </span>
+            <FiArrowRight className="group-hover:translate-x-2 transition-transform" />
+
+            {/* Animated Ring around button */}
+            <span className="absolute inset-0 rounded-full border border-white/20 group-hover:scale-125 group-hover:opacity-0 transition-all duration-700" />
+          </motion.button>
         </motion.div>
       </div>
+
+      {/* Minimal Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2 }}
+        className="absolute bottom-8 flex flex-col items-center gap-2"
+        style={{ left: "50%", translateX: "-50%" }}
+      >
+        <span className="text-[10px] text-gray-600 tracking-[0.4em] uppercase">
+          Discover
+        </span>
+        <motion.div
+          animate={{ height: [20, 40, 20] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="w-[1px] bg-red-600"
+        />
+      </motion.div>
     </section>
   );
 };

@@ -1,19 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
 import useLenis from "./hooks/useLenis";
 
-// Components
-import PageLoader from "./components/PageLoader";
-import About from "./components/About";
-import Speakers from "./components/Speakers";
+// Components that are small / critical
 
-import Venue from "./components/Venue";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import Organizers from "./components/Organizers";
-import FAQ from "./components/FAQ";
-// 1. Import your new Background component
-import PremiumBackground from "./components/PremiumBackground";
+const PageLoader = React.lazy(() => import("./components/PageLoader"));
+const Hero = React.lazy(() => import("./components/Hero"));
+
+// Lazy-loaded components (code-split)
+const About = React.lazy(() => import("./components/About"));
+const Speakers = React.lazy(() => import("./components/Speakers"));
+const Venue = React.lazy(() => import("./components/Venue"));
+const Organizers = React.lazy(() => import("./components/Organizers"));
+const FAQ = React.lazy(() => import("./components/FAQ"));
+const Footer = React.lazy(() => import("./components/Footer"));
+const PremiumBackground = React.lazy(() =>
+  import("./components/PremiumBackground")
+);
 
 const TEDx_BLACK = "bg-[#151515]";
 
@@ -45,23 +48,21 @@ function App() {
         {isLoading && <PageLoader onAnimationComplete={handleLoaderExit} />}
       </AnimatePresence>
 
-      {/* Main Content */}
       {animationComplete && (
         <>
-          {/* 2. Place it here: It will render behind all other components */}
-          <PremiumBackground />
+          <Suspense fallback={null}>
+            <PremiumBackground />
 
-          <main className="relative z-10">
-            <Hero />
-            <About />
-
-            <Speakers />
-            <Venue />
-            <Organizers />
-            <FAQ />
-
-            <Footer />
-          </main>
+            <main className="relative z-10">
+              <Hero />
+              <About />
+              <Speakers />
+              <Venue />
+              <Organizers />
+              <FAQ />
+              <Footer />
+            </main>
+          </Suspense>
         </>
       )}
     </div>

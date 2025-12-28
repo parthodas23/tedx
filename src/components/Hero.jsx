@@ -11,7 +11,7 @@ import { FiCalendar, FiMapPin, FiArrowRight } from "react-icons/fi";
 import Navbar from "./Navbar";
 import CountdownTimer from "./CountdownTimer";
 import BACKGROUND_IMAGE_PATH from "../assets/Logo.png";
-const EVENT_DATE = "2026-01-15T10:00:00";
+const EVENT_DATE = "2026-01-31T10:00:00";
 const Hero = () => {
   // --- MAGNETIC BUTTON LOGIC ---
   const buttonRef = useRef(null);

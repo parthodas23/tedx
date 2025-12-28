@@ -82,75 +82,80 @@ const speakers = [
 const Speakers = () => {
   return (
     <section id="speakers" className="relative py-24 bg-[#050505] text-white overflow-hidden">
-      {/* Ambient Background Glow for Big Screens */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-600/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-900/10 blur-[120px] rounded-full pointer-events-none" />
+      {/* Background Ambient Glows */}
+      <div className="absolute top-0 left-[-10%] w-[600px] h-[600px] bg-red-600/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-[-10%] w-[600px] h-[600px] bg-red-900/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Section Title */}
-        <div className="mb-20 text-center md:text-left">
+        
+        {/* Section Header */}
+        <div className="mb-20 text-center">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center md:justify-start gap-3 mb-4"
+            className="flex items-center justify-center gap-3 mb-4"
           >
-            <span className="w-12 h-[2px] bg-red-600"></span>
-            <span className="text-red-600 font-bold tracking-[0.3em] uppercase text-xs">
+            <span className="w-8 h-[1px] bg-red-600"></span>
+            <span className="text-red-500 font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs">
               The Visionaries
             </span>
+            <span className="w-8 h-[1px] bg-red-600"></span>
           </motion.div>
           
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-8xl font-black tracking-tighter italic"
+            className="text-5xl md:text-8xl font-black tracking-tighter"
           >
-            OUR <span className="text-transparent" style={{ WebkitTextStroke: "1.5px white" }}>SPEAKERS</span>
+            OUR <span className="text-transparent" style={{ WebkitTextStroke: "1px rgba(255,255,255,0.6)" }}>SPEAKERS</span>
           </motion.h3>
         </div>
 
         {/* Speakers Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {speakers.map((speaker, index) => (
             <motion.div
               key={speaker.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative"
+              className="group relative bg-neutral-900 rounded-2xl overflow-hidden border border-white/5"
             >
               {/* Image Container */}
-              <div className="relative overflow-hidden aspect-[4/5] rounded-xl bg-neutral-900">
+              <div className="relative aspect-[4/5] overflow-hidden">
                 <img
                   src={speaker.image}
                   alt={speaker.name}
-                  className="w-full h-full object-cover transition-all duration-700 grayscale md:grayscale group-hover:grayscale-0 group-hover:scale-105"
+                  // Full color on mobile (grayscale-0), Grayscale on desktop (md:grayscale)
+                  className="w-full h-full object-cover transition-all duration-700 grayscale-0 md:grayscale group-hover:grayscale-0 group-hover:scale-105"
                 />
-
-                {/* Overlay - Glassmorphism for Mobile, Solid for Hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                {/* Content */}
-                <div className="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 md:translate-y-12 md:group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="space-y-3">
-                    <h4 className="text-2xl font-bold tracking-tight">
-                      {speaker.name}
-                    </h4>
-                    <p className="text-red-500 font-medium text-sm leading-tight uppercase tracking-wider">
+                
+                {/* Gradient Overlay: Visible on mobile, fades in on hover for desktop */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent opacity-100 md:opacity-60 md:group-hover:opacity-90 transition-opacity duration-500" />
+                
+                {/* Text Content */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+                  <div className="transform transition-transform duration-500 md:translate-y-4 md:group-hover:translate-y-0">
+                    <p className="text-red-500 font-bold text-[10px] uppercase tracking-widest mb-2">
                       {speaker.role}
                     </p>
+                    <h4 className="text-2xl md:text-3xl font-bold leading-tight mb-3">
+                      {speaker.name}
+                    </h4>
+                    
+                    {/* Bio: Shows on mobile, expands on hover for desktop */}
+                    <div className="grid grid-rows-[0fr] md:group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out md:opacity-0 md:group-hover:opacity-100">
+                      <p className="overflow-hidden text-sm text-gray-300 font-light italic leading-relaxed">
+                        {speaker.bio}
+                      </p>
+                    </div>
 
-                    <div className="h-[1px] w-12 bg-red-600 group-hover:w-full transition-all duration-700"></div>
-
-                    <p className="text-sm text-gray-300 line-clamp-3 md:opacity-0 md:group-hover:opacity-100 transition-opacity delay-200 duration-500 font-light italic">
-                      {speaker.bio}
-                    </p>
-
-                    <div className="flex gap-5 pt-2">
+                    {/* Socials */}
+                    <div className="flex gap-4 mt-4">
                       {speaker.socials.linkedin && (
                         <a href={speaker.socials.linkedin} className="text-white hover:text-red-500 transition-colors">
                           <FaLinkedinIn size={18} />
@@ -165,31 +170,26 @@ const Speakers = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Decorative Corner Frame */}
-              <div className="absolute -top-2 -right-2 w-16 h-16 border-t-2 border-r-2 border-red-600/30 group-hover:border-red-600 group-hover:w-20 group-hover:h-20 transition-all duration-500 -z-10"></div>
             </motion.div>
           ))}
         </div>
 
         {/* CTA Button */}
-        <motion.div
-          className="mt-20 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <button className="group relative px-12 py-4 bg-transparent overflow-hidden">
-            <span className="absolute inset-0 w-0 bg-red-600 transition-all duration-300 ease-out group-hover:w-full"></span>
-            <span className="relative text-red-600 font-black uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300">
-              Get Your Tickets
-            </span>
-            <div className="absolute inset-0 border border-red-600"></div>
-          </button>
-        </motion.div>
+        <div className="mt-20 text-center">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-10 py-4 bg-red-600 text-white font-black uppercase tracking-widest text-sm hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.3)]"
+          >
+            Get Your Tickets
+          </motion.button>
+        </div>
       </div>
     </section>
   );
 };
 
 export default Speakers;
+
+
+

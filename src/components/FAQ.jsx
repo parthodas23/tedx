@@ -133,7 +133,7 @@ const FAQ = () => {
         >
           Still have questions? Reach out to us at{" "}
           <span className="text-red-600 underline cursor-pointer">
-            support@tedxub.com
+            tedxbuofficial@gmail.com
           </span>
         </motion.p>
       </div>

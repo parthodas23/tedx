@@ -51,13 +51,9 @@ const Venue = () => {
                     </span>
                   </div>
                   <h4 className="text-2xl font-bold leading-tight">
-                    Main Auditorium,
-                    <br />
-                    University of Barishal
+                    Barishal Shilpakala Academy
                   </h4>
-                  <p className="text-zinc-500 mt-2">
-                    Barishal-Patuakhali Highway, Barishal 8200, Bangladesh.
-                  </p>
+                  <p className="text-zinc-500 mt-2">Band Rd, Barishal</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-6">
@@ -82,7 +78,7 @@ const Venue = () => {
                 </div>
 
                 <motion.a
-                  href="https://maps.app.goo.gl/YourActualLink"
+                  href="https://maps.app.goo.gl/cp2cWFmLgdiihkf66"
                   target="_blank"
                   rel="noreferrer"
                   whileHover={{ scale: 1.02 }}

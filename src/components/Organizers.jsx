@@ -3,26 +3,6 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectCoverflow } from "swiper/modules";
 
-import abedurImg from "../assets/organizer/Abedur Rahman Sayem.jpeg";
-import abidaImg from "../assets/organizer/ABIDA ISLAM AHONA.jpg";
-import akhiImg from "../assets/organizer/Akhi Halder.jpg";
-import ayshaImg from "../assets/organizer/aysha siddika papry.jpeg";
-import eftyImg from "../assets/organizer/Efty al maruf.jpeg";
-import fahimaImg from "../assets/organizer/Fahima.jpg";
-import jannatulImg from "../assets/organizer/jannatul ferdous.jpg";
-import junaedImg from "../assets/organizer/Juned Al Sajid.jpeg";
-import sojibImg from "../assets/organizer/Mahmudul Hasan Sojib.jpeg";
-import mojoyImg from "../assets/organizer/monjoy kumar adhikari.jpg";
-import moriomImg from "../assets/organizer/Moriom Sabia.jpeg";
-import nayemImg from "../assets/organizer/nayem khalifa.jpeg";
-import oishiImg from "../assets/organizer/oishi dey.jpeg";
-import safayetImg from "../assets/organizer/Shafayet Ullah.jpg";
-import siamImg from "../assets/organizer/Siamul Islam.jpeg";
-import tanjilaImg from "../assets/organizer/TANJILA ISLAM.jpg";
-import tanvirImg from "../assets/organizer/Tanvir Mahtab.jpg";
-import taslimImg from "../assets/organizer/taslim ahmed nadim.jpeg";
-import hafsaImg from "../assets/organizer/umme hafsa.jpeg";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -31,78 +11,99 @@ import "swiper/css/effect-coverflow";
 const organizers = [
   {
     id: 1,
-    name: "Safayet Ullah",
+    name: "Shafayet Ullah",
     role: "Lead Organizer And Licensee",
-    image: safayetImg,
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/Shafayet_Ullah_w098et.jpg",
   },
-  { id: 2, name: "Umme Hafsa", role: "Curator", image: hafsaImg },
-  { id: 3, name: "Mahmudul Hasan Sojib", role: "Curator", image: sojibImg },
-  { id: 4, name: "Nayem Khalifa", role: "Curator", image: nayemImg },
-  // Sahedur is excluded because sahedurImg is not imported/defined
-  { id: 6, name: "Oishi Dey", role: "Sponsor Officer", image: oishiImg },
-  { id: 7, name: "Efty Al Maruf", role: "Head Of Marketing", image: eftyImg },
+  { 
+    id: 2, 
+    name: "Umme Hafsa", 
+    role: "Curator", 
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942377/umme_hafsa_bezeeb.jpg" 
+  },
+  { 
+    id: 3, 
+    name: "Mahmudul Hasan Sojib", 
+    role: "Curator", 
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/Mahmudul_Hasan_Sojib_rxcmoo.jpg" 
+  },
+  { 
+    id: 4, 
+    name: "Nayem Khalifa", 
+    role: "Curator", 
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/nayem_khalifa_mval17.jpg" 
+  },
+  { 
+    id: 6, 
+    name: "Oishi Dey", 
+    role: "Sponsor Officer", 
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942374/oishi_dey_woltp2.jpg" 
+  },
+  { 
+    id: 7, 
+    name: "Efty Al Maruf", 
+    role: "Head Of Marketing", 
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942374/Efty_al_maruf_zwmmlo.jpg" 
+  },
   {
     id: 8,
     name: "Md. Siamul Islam",
     role: "Head Of Operations",
-    image: siamImg,
-  },
-  {
-    id: 9,
-    name: "Jannatul Ferdous",
-    role: "Head Of Hospitality",
-    image: jannatulImg,
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942374/Siamul_Islam_nxfcnn.jpg",
   },
   {
     id: 10,
     name: "Moriom Sabia",
     role: "Head Of Partnership",
-    image: moriomImg,
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/Moriom_Sabia_fbjo66.jpg",
   },
-  { id: 11, name: "Akhi Halder", role: "Partnership Officer", image: akhiImg },
   {
     id: 12,
     name: "Abedur Rahman Sayem",
     role: "Head Of Event Management",
-    image: abedurImg,
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942375/Abedur_Rahman_Sayem_qfdet7.jpg",
   },
   {
     id: 13,
     name: "Md. Junaed Al Sajid",
     role: "Event Management Officer",
-    image: junaedImg,
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942375/Juned_Al_Sajid_dlnhho.jpg",
   },
   {
     id: 14,
-    name: "Mojoy Kumar Adhikary",
+    name: "Monjoy Kumar Adhikary",
     role: "Event Management Officer",
-    image: mojoyImg,
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/monjoy_kumar_adhikari_oqxhq1.jpg",
   },
   {
     id: 15,
     name: "Taslim Ahmed Nadim",
     role: "Event Management Executive",
-    image: taslimImg,
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/taslim_ahmed_nadim_vo2uyf.jpg",
   },
-  { id: 16, name: "Tanvir Mahtab", role: "Head Of IT", image: tanvirImg },
-  { id: 17, name: "Aysha Siddika Papry", role: "IT Officer", image: ayshaImg },
+  { 
+    id: 16, 
+    name: "Tanvir Mahtab", 
+    role: "Head Of IT", 
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942377/Tanvir_Mahtab_l0iewx.jpg" 
+  },
+  { 
+    id: 17, 
+    name: "Aysha Siddika Papry", 
+    role: "IT Officer", 
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942375/aysha_siddika_papry_njjplj.jpg" 
+  },
   {
     id: 18,
     name: "Abida Islam Ahona",
     role: "Head Of Communication",
-    image: abidaImg,
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942375/ABIDA_ISLAM_AHONA_tknia6.jpg",
   },
   {
     id: 19,
     name: "Tanjila Islam",
     role: "Communication Officer",
-    image: tanjilaImg,
-  },
-  {
-    id: 20,
-    name: "Fahima Kabir",
-    role: "Documentation Officer",
-    image: fahimaImg,
+    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/TANJILA_ISLAM_gtqwfk.jpg",
   },
 ];
 
@@ -171,9 +172,7 @@ const Organizers = () => {
                         src={member.image}
                         alt={member.name}
                         className="w-full h-full object-cover transition-all duration-700
-                                   /* Mobile: Full color and bright */
                                    grayscale-0 brightness-100 
-                                   /* Desktop: Grayscale until hover */
                                    md:grayscale md:brightness-50 
                                    md:group-hover:grayscale-0 md:group-hover:brightness-100 md:group-hover:scale-110"
                       />
@@ -182,13 +181,10 @@ const Organizers = () => {
                     {/* Overlay Tint */}
                     <div className="absolute inset-0 bg-red-600/10 opacity-0 md:group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                    {/* Text Content: Always visible on mobile, animated on desktop */}
+                    {/* Text Content */}
                     <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 bg-gradient-to-t from-black via-black/60 to-transparent">
                       <h4 className="text-xl md:text-2xl font-black text-white translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
-                        {member.name.split(" ")[0]}{" "}
-                        <span className="text-red-600">
-                          {member.name.split(" ")[1]}
-                        </span>
+                        {member.name}
                       </h4>
                       <p className="text-gray-400 text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold mt-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 md:translate-y-4 md:group-hover:translate-y-0 transition-all duration-500 delay-100">
                         {member.role}

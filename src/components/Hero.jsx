@@ -10,7 +10,9 @@ import { FiCalendar, FiMapPin, FiArrowRight } from "react-icons/fi";
 
 import Navbar from "./Navbar";
 import CountdownTimer from "./CountdownTimer";
-import BACKGROUND_IMAGE_PATH from "../assets/Logo.png";
+const BACKGROUND_IMAGE_PATH =
+  "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766945121/Logo_qteqe3.png";
+  
 const EVENT_DATE = "2026-01-31T10:00:00";
 const Hero = () => {
   // --- MAGNETIC BUTTON LOGIC ---
@@ -104,7 +106,11 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row gap-8 mt-16">
           {[
             { icon: <FiCalendar />, label: "SAVE THE DATE", val: "JANUARY 31" },
-            { icon: <FiMapPin />, label: "VENUE", val: "Barishal Shilpakala Academy"}
+            {
+              icon: <FiMapPin />,
+              label: "VENUE",
+              val: "Barishal Shilpakala Academy",
+            },
           ].map((item, idx) => (
             <motion.div
               key={idx}

@@ -80,128 +80,244 @@ const speakers = [
 
 const Speakers = () => {
   return (
-    <section
-      id="speakers"
-      className="relative py-24 bg-[#050505] text-white overflow-hidden"
-    >
-      {/* Background Ambient Glows */}
-      <div className="absolute top-0 left-[-10%] w-[600px] h-[600px] bg-red-600/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-[-10%] w-[600px] h-[600px] bg-red-900/10 blur-[120px] rounded-full pointer-events-none" />
+    <div>
+      <section
+        id="speakers"
+        className="relative py-24 bg-[#050505] text-white overflow-hidden"
+      >
+        {/* Background Ambient Glows */}
+        <div className="absolute top-0 left-[-10%] w-[600px] h-[600px] bg-red-600/10 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 right-[-10%] w-[600px] h-[600px] bg-red-900/10 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Section Header */}
-        <div className="mb-20 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center justify-center gap-3 mb-4"
-          >
-            <span className="w-8 h-[1px] bg-red-600"></span>
-            <span className="text-red-500 font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs">
-              The Visionaries
-            </span>
-            <span className="w-8 h-[1px] bg-red-600"></span>
-          </motion.div>
-
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-5xl md:text-8xl font-black tracking-tighter"
-          >
-            OUR{" "}
-            <span
-              className="text-transparent"
-              style={{ WebkitTextStroke: "1px rgba(255,255,255,0.6)" }}
-            >
-              SPEAKERS
-            </span>
-          </motion.h3>
-        </div>
-
-        {/* Speakers Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {speakers.map((speaker, index) => (
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          {/* Section Header */}
+          <div className="mb-20 text-center">
             <motion.div
-              key={speaker.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative bg-neutral-900 rounded-2xl overflow-hidden border border-white/5"
+              className="flex items-center justify-center gap-3 mb-4"
             >
-              {/* Image Container */}
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={speaker.image}
-                  alt={speaker.name}
-                  className="w-full h-full object-cover transition-all duration-700 grayscale-0 md:grayscale group-hover:grayscale-0 group-hover:scale-105"
-                />
+              <span className="w-8 h-[1px] bg-red-600"></span>
+              <span className="text-red-500 font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs">
+                The Visionaries
+              </span>
+              <span className="w-8 h-[1px] bg-red-600"></span>
+            </motion.div>
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent opacity-100 md:opacity-60 md:group-hover:opacity-90 transition-opacity duration-500" />
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-5xl md:text-8xl font-black tracking-tighter"
+            >
+              OUR{" "}
+              <span
+                className="text-transparent"
+                style={{ WebkitTextStroke: "1px rgba(255,255,255,0.6)" }}
+              >
+                SPEAKERS
+              </span>
+            </motion.h3>
+          </div>
 
-                {/* Text Content */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-                  <div className="transform transition-transform duration-500 md:translate-y-4 md:group-hover:translate-y-0">
-                    <p className="text-red-500 font-bold text-[10px] uppercase tracking-widest mb-2">
-                      {speaker.role}
-                    </p>
-                    <h4 className="text-2xl md:text-3xl font-bold leading-tight mb-3">
-                      {speaker.name}
-                    </h4>
+          {/* Speakers Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {speakers.map((speaker, index) => (
+              <motion.div
+                key={speaker.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative bg-neutral-900 rounded-2xl overflow-hidden border border-white/5"
+              >
+                {/* Image Container */}
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="w-full h-full object-cover transition-all duration-700 grayscale-0 md:grayscale group-hover:grayscale-0 group-hover:scale-105"
+                  />
 
-                    {/* Bio expansion */}
-                    <div className="grid grid-rows-[0fr] md:group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out md:opacity-0 md:group-hover:opacity-100">
-                      <p className="overflow-hidden text-sm text-gray-300 font-light italic leading-relaxed">
-                        {speaker.bio}
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent opacity-100 md:opacity-60 md:group-hover:opacity-90 transition-opacity duration-500" />
+
+                  {/* Text Content */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+                    <div className="transform transition-transform duration-500 md:translate-y-4 md:group-hover:translate-y-0">
+                      <p className="text-red-500 font-bold text-[10px] uppercase tracking-widest mb-2">
+                        {speaker.role}
                       </p>
-                    </div>
+                      <h4 className="text-2xl md:text-3xl font-bold leading-tight mb-3">
+                        {speaker.name}
+                      </h4>
 
-                    {/* Socials */}
-                    <div className="flex gap-4 mt-4">
-                      {speaker.socials.linkedin && (
-                        <a
-                          href={speaker.socials.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-white hover:text-red-500 transition-colors"
-                        >
-                          <FaLinkedinIn size={18} />
-                        </a>
-                      )}
-                      {speaker.socials.facebook && (
-                        <a
-                          href={speaker.socials.facebook}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-white hover:text-red-500 transition-colors"
-                        >
-                          <FaFacebook size={18} />
-                        </a>
-                      )}
+                      {/* Bio expansion */}
+                      <div className="grid grid-rows-[0fr] md:group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out md:opacity-0 md:group-hover:opacity-100">
+                        <p className="overflow-hidden text-sm text-gray-300 font-light italic leading-relaxed">
+                          {speaker.bio}
+                        </p>
+                      </div>
+
+                      {/* Socials */}
+                      <div className="flex gap-4 mt-4">
+                        {speaker.socials.linkedin && (
+                          <a
+                            href={speaker.socials.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white hover:text-red-500 transition-colors"
+                          >
+                            <FaLinkedinIn size={18} />
+                          </a>
+                        )}
+                        {speaker.socials.facebook && (
+                          <a
+                            href={speaker.socials.facebook}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white hover:text-red-500 transition-colors"
+                          >
+                            <FaFacebook size={18} />
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </div>
 
-        {/* CTA Button */}
-        <div className="mt-20 text-center">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-10 py-4 bg-red-600 text-white font-black uppercase tracking-widest text-sm hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.3)]"
-          >
-            Get Your Tickets
-          </motion.button>
+         
+          
         </div>
-      </div>
-    </section>
+      </section>
+      <section
+        id="speakers"
+        className="relative py-24 bg-[#050505] text-white overflow-hidden"
+      >
+        {/* Background Ambient Glows */}
+        <div className="absolute top-0 left-[-10%] w-[600px] h-[600px] bg-red-600/10 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 right-[-10%] w-[600px] h-[600px] bg-red-900/10 blur-[120px] rounded-full pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          {/* Section Header */}
+          <div className="mb-20 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center justify-center gap-3 mb-4"
+            >
+              <span className="w-8 h-[1px] bg-red-600"></span>
+              <span className="text-red-500 font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs">
+                The Visionaries
+              </span>
+              <span className="w-8 h-[1px] bg-red-600"></span>
+            </motion.div>
+
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-5xl md:text-8xl font-black tracking-tighter"
+            >
+              2025{" "}
+              <span
+                className="text-transparent"
+                style={{ WebkitTextStroke: "1px rgba(255,255,255,0.6)" }}
+              >
+                SPEAKERS
+              </span>
+            </motion.h3>
+          </div>
+
+          {/* Speakers Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {speakers.map((speaker, index) => (
+              <motion.div
+                key={speaker.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative bg-neutral-900 rounded-2xl overflow-hidden border border-white/5"
+              >
+                {/* Image Container */}
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="w-full h-full object-cover transition-all duration-700 grayscale-0 md:grayscale group-hover:grayscale-0 group-hover:scale-105"
+                  />
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent opacity-100 md:opacity-60 md:group-hover:opacity-90 transition-opacity duration-500" />
+
+                  {/* Text Content */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+                    <div className="transform transition-transform duration-500 md:translate-y-4 md:group-hover:translate-y-0">
+                      <p className="text-red-500 font-bold text-[10px] uppercase tracking-widest mb-2">
+                        {speaker.role}
+                      </p>
+                      <h4 className="text-2xl md:text-3xl font-bold leading-tight mb-3">
+                        {speaker.name}
+                      </h4>
+
+                      {/* Bio expansion */}
+                      <div className="grid grid-rows-[0fr] md:group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out md:opacity-0 md:group-hover:opacity-100">
+                        <p className="overflow-hidden text-sm text-gray-300 font-light italic leading-relaxed">
+                          {speaker.bio}
+                        </p>
+                      </div>
+
+                      {/* Socials */}
+                      <div className="flex gap-4 mt-4">
+                        {speaker.socials.linkedin && (
+                          <a
+                            href={speaker.socials.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white hover:text-red-500 transition-colors"
+                          >
+                            <FaLinkedinIn size={18} />
+                          </a>
+                        )}
+                        {speaker.socials.facebook && (
+                          <a
+                            href={speaker.socials.facebook}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white hover:text-red-500 transition-colors"
+                          >
+                            <FaFacebook size={18} />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="mt-20 text-center">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-4 bg-red-600 text-white font-black uppercase tracking-widest text-sm hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.3)]"
+            >
+              Get Your Tickets
+            </motion.button>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 

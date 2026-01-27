@@ -6,7 +6,7 @@ const navItems = [
   { name: "SPEAKERS", href: "#speakers" },
   { name: "VENUE", href: "#venue" },
   { name: "ORGANIZER", href: "#organizers" },
-  { name: "FAQ", href: "#faq" },
+  { name: "THEME", href: "#theme" },
 ];
 
 const Navbar = () => {

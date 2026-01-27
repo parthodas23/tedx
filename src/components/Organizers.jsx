@@ -130,7 +130,7 @@ const Organizers = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-4xl md:text-6xl font-black italic tracking-tighter"
           >
-            ORGANIZING COMMITTEE
+            ORGANIZING COMMITTEE 25
           </motion.h3>
         </div>
 

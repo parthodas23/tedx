@@ -106,7 +106,7 @@ const PageLoader = ({ onAnimationComplete }) => {
       >
         {/* Event Suffix */}
         <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-widest select-none text-center px-2"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-widest select-none text-center px-2"
           variants={textVariants}
           initial="initial"
           animate="animate"

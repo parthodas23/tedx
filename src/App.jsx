@@ -1,6 +1,8 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
 import useLenis from "./hooks/useLenis";
+import Organizer from "./components/Organizer";
+import Theme from "./components/Theme";
 
 // Components that are small / critical
 
@@ -14,8 +16,8 @@ const Venue = React.lazy(() => import("./components/Venue"));
 const Organizers = React.lazy(() => import("./components/Organizers"));
 const FAQ = React.lazy(() => import("./components/FAQ"));
 const Footer = React.lazy(() => import("./components/Footer"));
-const PremiumBackground = React.lazy(() =>
-  import("./components/PremiumBackground")
+const PremiumBackground = React.lazy(
+  () => import("./components/PremiumBackground"),
 );
 
 const TEDx_BLACK = "bg-[#151515]";
@@ -57,7 +59,9 @@ function App() {
               <Hero />
               <About />
               <Speakers />
+              <Theme />
               <Venue />
+              <Organizer />
               <Organizers />
               <FAQ />
               <Footer />

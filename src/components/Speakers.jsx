@@ -78,6 +78,83 @@ const speakers = [
   },
 ];
 
+
+const speaker1 = [
+  {
+    id: 1,
+    name: "John Doe",
+    role: "Guest Speaker",
+    bio: "Experienced professional sharing insights on communication, leadership, and innovation.",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
+    socials: {
+      facebook: null,
+      linkedin: null,
+    },
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    role: "Industry Expert",
+    bio: "Passionate speaker with expertise in technology, business strategy, and growth.",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
+    socials: {
+      facebook: null,
+      linkedin: null,
+    },
+  },
+  {
+    id: 3,
+    name: "Alex Johnson",
+    role: "Author & Mentor",
+    bio: "Focused on simplifying complex ideas and inspiring the next generation.",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
+    socials: {
+      facebook: null,
+      linkedin: null,
+    },
+  },
+  {
+    id: 4,
+    name: "Emily Brown",
+    role: "Corporate Specialist",
+    bio: "Expert in branding, storytelling, and professional communication.",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
+    socials: {
+      facebook: null,
+      linkedin: null,
+    },
+  },
+  {
+    id: 5,
+    name: "Michael Lee",
+    role: "Creative Producer",
+    bio: "Creative thinker blending storytelling with modern digital platforms.",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
+    socials: {
+      facebook: null,
+      linkedin: null,
+    },
+  },
+  {
+    id: 6,
+    name: "Sophia Wilson",
+    role: "Founder & Entrepreneur",
+    bio: "Building communities and platforms that empower learners and creators.",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
+    socials: {
+      facebook: null,
+      linkedin: null,
+    },
+  },
+];
+
+
 const Speakers = () => {
   return (
     <div>
@@ -117,14 +194,14 @@ const Speakers = () => {
                 className="text-transparent"
                 style={{ WebkitTextStroke: "1px rgba(255,255,255,0.6)" }}
               >
-                SPEAKERS
+                SPEAKERS 2026
               </span>
             </motion.h3>
           </div>
 
           {/* Speakers Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {speakers.map((speaker, index) => (
+            {speaker1.map((speaker, index) => (
               <motion.div
                 key={speaker.id}
                 initial={{ opacity: 0, y: 30 }}

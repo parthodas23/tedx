@@ -154,7 +154,7 @@ const TedXSection = () => {
           transition={{ delay: 3, duration: 1 }}
         >
           <span className="uppercase tracking-widest text-[10px] mb-2">
-            Discover the vision
+            Event Theme
           </span>
           <div className="w-[1px] h-16 bg-neutral-800 relative overflow-hidden">
             <motion.div

@@ -13,97 +13,120 @@ const organizers = [
     id: 1,
     name: "Shafayet Ullah",
     role: "Lead Organizer And Licensee",
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/Shafayet_Ullah_w098et.jpg",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/Shafayet_Ullah_w098et.jpg",
   },
-  { 
-    id: 2, 
-    name: "Umme Hafsa", 
-    role: "Curator", 
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942377/umme_hafsa_bezeeb.jpg" 
+  {
+    id: 2,
+    name: "Umme Hafsa",
+    role: "Curator",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942377/umme_hafsa_bezeeb.jpg",
   },
-  { 
-    id: 3, 
-    name: "Mahmudul Hasan Sojib", 
-    role: "Curator", 
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/Mahmudul_Hasan_Sojib_rxcmoo.jpg" 
+  {
+    id: 3,
+    name: "Mahmudul Hasan Sojib",
+    role: "Curator",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/Mahmudul_Hasan_Sojib_rxcmoo.jpg",
   },
-  { 
-    id: 4, 
-    name: "Nayem Khalifa", 
-    role: "Curator", 
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/nayem_khalifa_mval17.jpg" 
+  {
+    id: 4,
+    name: "Nayem Khalifa",
+    role: "Curator",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/nayem_khalifa_mval17.jpg",
   },
-  { 
-    id: 6, 
-    name: "Oishi Dey", 
-    role: "Sponsor Officer", 
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942374/oishi_dey_woltp2.jpg" 
+  {
+    id: 6,
+    name: "Oishi Dey",
+    role: "Sponsor Officer",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942374/oishi_dey_woltp2.jpg",
   },
-  { 
-    id: 7, 
-    name: "Efty Al Maruf", 
-    role: "Head Of Marketing", 
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942374/Efty_al_maruf_zwmmlo.jpg" 
+  {
+    id: 7,
+    name: "Efty Al Maruf",
+    role: "Head Of Marketing",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942374/Efty_al_maruf_zwmmlo.jpg",
   },
   {
     id: 8,
     name: "Md. Siamul Islam",
     role: "Head Of Operations",
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942374/Siamul_Islam_nxfcnn.jpg",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942374/Siamul_Islam_nxfcnn.jpg",
   },
   {
     id: 10,
     name: "Moriom Sabia",
     role: "Head Of Partnership",
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/Moriom_Sabia_fbjo66.jpg",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/Moriom_Sabia_fbjo66.jpg",
+  },
+  {
+    id: 11,
+    name: "Akhi Halder",
+    role: "Partnership Officer",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769789961/DSC02862.jpg_d2pw00.jpg",
   },
   {
     id: 12,
     name: "Abedur Rahman Sayem",
     role: "Head Of Event Management",
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942375/Abedur_Rahman_Sayem_qfdet7.jpg",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942375/Abedur_Rahman_Sayem_qfdet7.jpg",
   },
   {
     id: 13,
     name: "Md. Junaed Al Sajid",
     role: "Event Management Officer",
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942375/Juned_Al_Sajid_dlnhho.jpg",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942375/Juned_Al_Sajid_dlnhho.jpg",
   },
   {
     id: 14,
     name: "Monjoy Kumar Adhikary",
     role: "Event Management Officer",
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/monjoy_kumar_adhikari_oqxhq1.jpg",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/monjoy_kumar_adhikari_oqxhq1.jpg",
   },
   {
     id: 15,
     name: "Taslim Ahmed Nadim",
     role: "Event Management Executive",
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/taslim_ahmed_nadim_vo2uyf.jpg",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/taslim_ahmed_nadim_vo2uyf.jpg",
   },
-  { 
-    id: 16, 
-    name: "Tanvir Mahtab", 
-    role: "Head Of IT", 
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942377/Tanvir_Mahtab_l0iewx.jpg" 
+  {
+    id: 16,
+    name: "Tanvir Mahtab",
+    role: "Head Of IT",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942377/Tanvir_Mahtab_l0iewx.jpg",
   },
-  { 
-    id: 17, 
-    name: "Aysha Siddika Papry", 
-    role: "IT Officer", 
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942375/aysha_siddika_papry_njjplj.jpg" 
+  {
+    id: 17,
+    name: "Aysha Siddika Papry",
+    role: "IT Officer",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942375/aysha_siddika_papry_njjplj.jpg",
   },
   {
     id: 18,
     name: "Abida Islam Ahona",
     role: "Head Of Communication",
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942375/ABIDA_ISLAM_AHONA_tknia6.jpg",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942375/ABIDA_ISLAM_AHONA_tknia6.jpg",
   },
   {
     id: 19,
     name: "Tanjila Islam",
     role: "Communication Officer",
-    image: "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/TANJILA_ISLAM_gtqwfk.jpg",
+    image:
+      "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942376/TANJILA_ISLAM_gtqwfk.jpg",
   },
 ];
 

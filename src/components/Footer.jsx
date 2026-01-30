@@ -124,7 +124,7 @@ const Footer = () => {
             whileTap={{ scale: 0.95 }}
             className="group relative px-8 py-3 bg-zinc-900/30 border border-zinc-800 rounded-full backdrop-blur-md cursor-pointer transition-colors overflow-hidden"
           >
-            <div className="flex items-center space-x-3 text-xs tracking-[0.2em] uppercase">
+            <div className="flex items-center space-x-3 text-xs tracking-[0.2em]">
               <FiCode className="text-red-600 animate-pulse" />
               <span className="text-zinc-500 group-hover:text-zinc-300 transition-colors">
                 Developed & Coded by

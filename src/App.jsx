@@ -3,6 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import useLenis from "./hooks/useLenis";
 import Organizer from "./components/Organizer";
 import Theme from "./components/Theme";
+import Partners from "./components/Partners";
 
 // Components that are small / critical
 
@@ -63,6 +64,7 @@ function App() {
               <Venue />
               <Organizer />
               <Organizers />
+              <Partners />
               <FAQ />
               <Footer />
             </main>

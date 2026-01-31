@@ -109,7 +109,7 @@ const Hero = () => {
             {
               icon: <FiMapPin />,
               label: "VENUE",
-              val: "Barishal Shilpakala Academy",
+              val: "Barishal Shilpakala Academy,Bangladesh",
             },
           ].map((item, idx) => (
             <motion.div

@@ -5,7 +5,7 @@ const organizers = [
   {
     id: 1,
     name: "Shafayet Ullah",
-    role: "License",
+    role: "Licensee",
     year: "20",
     image:
       "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535598/WhatsApp_Image_2026-01-24_at_7.28.41_PM_f9j7hm.jpg",

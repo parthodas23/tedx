@@ -82,9 +82,9 @@ const speakers = [
 const speaker1 = [
   {
     id: 1,
-    name: "John Doe",
+    name: "",
     role: "Guest Speaker",
-    bio: "Experienced professional sharing insights on communication, leadership, and innovation.",
+    bio: "",
     image:
       "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
     socials: {
@@ -94,9 +94,9 @@ const speaker1 = [
   },
   {
     id: 2,
-    name: "Jane Smith",
+    name: "",
     role: "Industry Expert",
-    bio: "Passionate speaker with expertise in technology, business strategy, and growth.",
+    bio: "",
     image:
       "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
     socials: {
@@ -106,9 +106,9 @@ const speaker1 = [
   },
   {
     id: 3,
-    name: "Alex Johnson",
+    name: "",
     role: "Author & Mentor",
-    bio: "Focused on simplifying complex ideas and inspiring the next generation.",
+    bio: "",
     image:
       "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
     socials: {
@@ -118,9 +118,9 @@ const speaker1 = [
   },
   {
     id: 4,
-    name: "Emily Brown",
+    name: "",
     role: "Corporate Specialist",
-    bio: "Expert in branding, storytelling, and professional communication.",
+    bio: "",
     image:
       "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
     socials: {
@@ -130,9 +130,9 @@ const speaker1 = [
   },
   {
     id: 5,
-    name: "Michael Lee",
+    name: "",
     role: "Creative Producer",
-    bio: "Creative thinker blending storytelling with modern digital platforms.",
+    bio: "",
     image:
       "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
     socials: {
@@ -142,9 +142,9 @@ const speaker1 = [
   },
   {
     id: 6,
-    name: "Sophia Wilson",
+    name: "",
     role: "Founder & Entrepreneur",
-    bio: "Building communities and platforms that empower learners and creators.",
+    bio: "",
     image:
       "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535845/WhatsApp_Image_2026-01-17_at_12.23.43_AM_juqang.jpg",
     socials: {

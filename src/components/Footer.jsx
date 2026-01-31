@@ -96,7 +96,9 @@ const Footer = () => {
               <p className="leading-relaxed">
                 Barishal Shilpakala Academy
                 <br />
-                <span className="text-zinc-500">Band Rd, Barishal</span>
+                <span className="text-zinc-500">
+                  Band Rd, Barishal, Bangladesh
+                </span>
               </p>
               <a
                 href="mailto:tedxbuofficial@gmail.com"

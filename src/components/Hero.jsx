@@ -12,8 +12,8 @@ import Navbar from "./Navbar";
 import CountdownTimer from "./CountdownTimer";
 const BACKGROUND_IMAGE_PATH =
   "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766945121/Logo_qteqe3.png";
-  
-const EVENT_DATE = "2026-01-31T10:00:00";
+
+const EVENT_DATE = "2026-04-18T10:00:00";
 const Hero = () => {
   // --- MAGNETIC BUTTON LOGIC ---
   const buttonRef = useRef(null);
@@ -105,7 +105,7 @@ const Hero = () => {
         {/* --- INFO CARDS WITH BORDER ANIMATION --- */}
         <div className="flex flex-col md:flex-row gap-8 mt-16">
           {[
-            { icon: <FiCalendar />, label: "SAVE THE DATE", val: "JANUARY 31" },
+            { icon: <FiCalendar />, label: "SAVE THE DATE", val: "April 18" },
             {
               icon: <FiMapPin />,
               label: "VENUE",

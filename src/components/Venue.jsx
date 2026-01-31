@@ -53,7 +53,7 @@ const Venue = () => {
                   <h4 className="text-2xl font-bold leading-tight">
                     Barishal Shilpakala Academy
                   </h4>
-                  <p className="text-zinc-500 mt-2">Band Rd, Barishal</p>
+                  <p className="text-zinc-500 mt-2">Band Rd, Barishal, Bangladesh</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-6">
@@ -64,7 +64,7 @@ const Venue = () => {
                         Time
                       </span>
                     </div>
-                    <p className="text-sm font-semibold">09:00 AM - 05:00 PM</p>
+                    <p className="text-sm font-semibold">08:00 AM - 08:00 PM</p>
                   </div>
                   <div>
                     <div className="flex items-center space-x-2 mb-2">

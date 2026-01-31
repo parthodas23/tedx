@@ -5,7 +5,7 @@ const organizers = [
   {
     id: 1,
     name: "Shafayet Ullah",
-    role: "Lead Organizer",
+    role: "License",
     year: "20",
     image:
       "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1769535598/WhatsApp_Image_2026-01-24_at_7.28.41_PM_f9j7hm.jpg",
@@ -13,7 +13,7 @@ const organizers = [
   {
     id: 2,
     name: "Tanvir Mahtab",
-    role: "Co-Organizer",
+    role: "Lead Organizer",
     year: "26",
     image:
       "https://res.cloudinary.com/dkmwu9ec1/image/upload/v1766942377/Tanvir_Mahtab_l0iewx.jpg",

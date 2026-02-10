@@ -148,6 +148,41 @@ const Footer = () => {
             {/* Hover Glow effect for the card */}
             <div className="absolute inset-0 bg-red-600/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
           </motion.a>
+          <motion.a
+            href="https://www.linkedin.com/in/arafat-rahman-sijan/"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{
+              scale: 1.02,
+              borderColor: "rgba(220, 38, 38, 0.5)", // Red glow on border
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="group relative px-8 py-3 bg-zinc-900/30 border border-zinc-800 rounded-full backdrop-blur-md cursor-pointer transition-colors overflow-hidden"
+          >
+            <div className="flex items-center space-x-3 text-xs tracking-[0.2em]">
+              <FiCode className="text-red-600 animate-pulse" />
+              <span className="text-zinc-500 group-hover:text-zinc-300 transition-colors">
+                Technical Support by
+              </span>
+              <motion.span
+                className="text-white font-black transition-all group-hover:text-red-500"
+                style={{ textShadow: "0px 0px 0px rgba(220, 38, 38, 0)" }}
+                whileHover={{
+                  textShadow: "0px 0px 8px rgba(220, 38, 38, 0.8)",
+                }}
+              >
+                Arafat
+              </motion.span>
+            </div>
+
+            {/* Background Shine Animation */}
+            <motion.div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+
+            {/* Hover Glow effect for the card */}
+            <div className="absolute inset-0 bg-red-600/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+          </motion.a>
 
           {/* Legal and Top Button */}
           <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6">

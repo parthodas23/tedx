@@ -113,76 +113,58 @@ const Footer = () => {
         {/* 3. Bottom Bar */}
         <div className="pt-10 border-t border-zinc-900 flex flex-col items-center gap-10">
           {/* Eye-Catching Credit Card */}
-          <motion.a
-            href="https://www.linkedin.com/in/parthadas23/"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{
-              scale: 1.02,
-              borderColor: "rgba(220, 38, 38, 0.5)", // Red glow on border
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative px-8 py-3 bg-zinc-900/30 border border-zinc-800 rounded-full backdrop-blur-md cursor-pointer transition-colors overflow-hidden"
-          >
-            <div className="flex items-center space-x-3 text-xs tracking-[0.2em]">
-              <FiCode className="text-red-600 animate-pulse" />
-              <span className="text-zinc-500 group-hover:text-zinc-300 transition-colors">
-                Developed & Coded by
-              </span>
-              <motion.span
-                className="text-white font-black transition-all group-hover:text-red-500"
-                style={{ textShadow: "0px 0px 0px rgba(220, 38, 38, 0)" }}
-                whileHover={{
-                  textShadow: "0px 0px 8px rgba(220, 38, 38, 0.8)",
-                }}
+          {/* --- Unified Credits Card --- */}
+          <div className="flex flex-col items-center gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="group relative flex flex-col md:flex-row items-center divide-y md:divide-y-0 md:divide-x divide-zinc-800 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl backdrop-blur-xl overflow-hidden transition-all hover:border-red-600/30"
+            >
+              {/* Partha - Developer */}
+              <a
+                href="https://www.linkedin.com/in/parthadas23/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-4 px-8 py-4 hover:bg-white/[0.02] transition-colors group/item"
               >
-                Partha
-              </motion.span>
-            </div>
+                <div className="p-2 bg-red-600/10 rounded-lg group-hover/item:bg-red-600/20 transition-colors">
+                  <FiCode className="text-red-500 text-base" />
+                </div>
+                <div className="flex flex-col items-start">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-500">
+                    Developed By
+                  </span>
+                  <span className="text-sm font-bold text-zinc-200 group-hover/item:text-white transition-colors">
+                    Partha Das
+                  </span>
+                </div>
+              </a>
 
-            {/* Background Shine Animation */}
-            <motion.div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
-
-            {/* Hover Glow effect for the card */}
-            <div className="absolute inset-0 bg-red-600/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-          </motion.a>
-          <motion.a
-            href="https://www.linkedin.com/in/arafat-rahman-sijan/"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{
-              scale: 1.02,
-              borderColor: "rgba(220, 38, 38, 0.5)", // Red glow on border
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative px-8 py-3 bg-zinc-900/30 border border-zinc-800 rounded-full backdrop-blur-md cursor-pointer transition-colors overflow-hidden"
-          >
-            <div className="flex items-center space-x-3 text-xs tracking-[0.2em]">
-              <FiCode className="text-red-600 animate-pulse" />
-              <span className="text-zinc-500 group-hover:text-zinc-300 transition-colors">
-                Technical Support by
-              </span>
-              <motion.span
-                className="text-white font-black transition-all group-hover:text-red-500"
-                style={{ textShadow: "0px 0px 0px rgba(220, 38, 38, 0)" }}
-                whileHover={{
-                  textShadow: "0px 0px 8px rgba(220, 38, 38, 0.8)",
-                }}
+              {/* Arafat - Support */}
+              <a
+                href="https://www.linkedin.com/in/arafat-rahman-sijan/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-4 px-8 py-4 hover:bg-white/[0.02] transition-colors group/item"
               >
-                Arafat
-              </motion.span>
-            </div>
+                <div className="p-2 bg-zinc-800 rounded-lg group-hover/item:bg-zinc-700 transition-colors">
+                  <FiCode className="text-purple-400 text-base group-hover/item:text-red-400" />
+                </div>
+                <div className="flex flex-col items-start">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-500">
+                    Technical Support
+                  </span>
+                  <span className="text-sm font-bold text-zinc-200 group-hover/item:text-white transition-colors">
+                    Arafat Sijan
+                  </span>
+                </div>
+              </a>
 
-            {/* Background Shine Animation */}
-            <motion.div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
-
-            {/* Hover Glow effect for the card */}
-            <div className="absolute inset-0 bg-red-600/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-          </motion.a>
+              {/* Interactive Background Shine */}
+              <motion.div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-600/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+            </motion.div>
+          </div>
 
           {/* Legal and Top Button */}
           <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6">

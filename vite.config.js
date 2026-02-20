@@ -10,7 +10,6 @@ export default defineConfig({
     tailwindcss(),
     viteCompression({ algorithm: "brotliCompress" }),
   ],
-  base: "/tedx/",
   build: {
     chunkSizeWarningLimit: 600, // increase warning limit if needed
     rollupOptions: {
